@@ -1,0 +1,63 @@
+// .setting.json
+{
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.fontSize": 16,
+  "update.channel": "none",
+  "eslint.validate": ["javascript", "javascriptreact", "html", "vue"],
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 120,
+  "prettier.endOfLine": "lf",
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": true,
+  "editor.renderControlCharacters": true,
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      // force-aligned | force-expand-multiline
+      "wrap_attributes": "force-aligned"
+    },
+    "prettyhtml": {
+      "printWidth": 100,
+      "singleQuote": false,
+      "wrapAttributes": false,
+      "sortAttributes": false
+    },
+    "prettier": {
+      "singleQuote": true,
+      "trailingComma": "all"
+    }
+  },
+  "git.enableSmartCommit": true,
+  "cSpell.enabledLanguageIds": [
+    "c",
+    "cpp",
+    "csharp",
+    "go",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "latex",
+    "markdown",
+    "php",
+    "plaintext",
+    "python",
+    "text",
+    "typescript",
+    "typescriptreact",
+    "yml"
+  ],
+  "window.zoomLevel": 0,
+  "gitlens.keymap": "alternate",
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "search.location": "sidebar",
+  "workbench.activityBar.visible": true,
+  "files.autoSave": "off",
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  "vsicons.dontShowNewVersionMessage": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
