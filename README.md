@@ -94,7 +94,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - 你的 title 是动态改变 你可以在配置路由中添加 meta.title 动态你想要的 title
   >
 - 更多介绍 请移步 官网文档 [Vue Router](https://router.vuejs.org/zh/guide/#html)
-- 我们更推荐路由组件传参使用 route props 来提高你的组件解耦 示例 1
+- 我们更推荐路由组件传参使用 route props 来提高你的组件解耦
 
 ```示例1
 const User = {
