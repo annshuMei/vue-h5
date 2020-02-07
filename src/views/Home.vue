@@ -4,7 +4,6 @@
 
     <div class="songlist_row_s" v-finger:swipe="swipeHandler">
       你可以滑动改变数字
-      <p>并看到发出的请求</p>
     </div>
     <div>{{ storeNumber }}</div>
 

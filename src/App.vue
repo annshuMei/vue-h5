@@ -2,7 +2,7 @@
   <div id="app">
     <transition :name="transitionName">
       <keep-alive :include="keepAlivePages">
-        <router-view class="Router"></router-view>
+        <router-view v-if="overloaded" class="Router"></router-view>
       </keep-alive>
     </transition>
     <div class="loading_page" v-show="loading">
@@ -16,10 +16,18 @@ import { mapState } from 'vuex';
 
 export default {
   name: 'app',
+
+  provide() {
+    return {
+      reload: this.reload
+    };
+  },
+
   data() {
     return {
       transitionName: 'slide-right',
-      loading: false
+      loading: false,
+      overloaded: true
     };
   },
 
@@ -53,7 +61,14 @@ export default {
     }
   },
 
-  methods: {}
+  methods: {
+    reload() {
+      this.overloaded = false;
+      this.$nextTick(() => {
+        this.overloaded = true;
+      });
+    }
+  }
 };
 </script>
 

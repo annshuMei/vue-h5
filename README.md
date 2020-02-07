@@ -62,8 +62,19 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## postcss-pxtorem 适应配置
 
 - 默认设计稿大小 375px
-- 你可以在项目中 css 或 style 中使用 px
+- 你可以在项目中 css 或 style 中使用 px 应用将自行转换 rem 来做到适配
 - 但是我们并不推荐使用 375px 以上尺寸
+
+- 在 utils/rem/index.js 文件中我们将 amfe-flexible 提供源码复制出来并做修改
+  > 你将发现如果屏幕大于 540px 时 375px 不再是一屏的宽度，这是我们为了做到 Pad 视觉适配所做调整。不让 html 根 fontSize 大于 54 是为了在大屏时也能正常显示。在开发当中我们推荐使用 100%
+  ```
+  if (rem >= 54) {
+    docEl.style.fontSize = `${54}px`;
+  } else {
+    docEl.style.fontSize = `${rem}px`;
+  }
+  ```
+-
 
 ## vueRouter 文本
 
@@ -150,17 +161,18 @@ import { Button } from 'vant';
 - 我们默认动画为 slide-left slide-right 如需自定义页面动画请移步 App.vue
 - keepAlivePages 用于保存缓存的组件 我们 push 保存 home 组件并 pop 删除 about 组件
   > 你可以很好的体验 home 与 about 的输入框的不同
+- 我们使用 provide/inject 来进行页面刷新 如需了解详情请移步 About.vue
 
 ## 遗留问题
 
-- 我们推荐使用 better-scroll 组件来实现列表滑动页面
-- 你可以通过 npm 安装 [better-scroll](https://github.com/daughterRui/vue-custom-scrollview)
+- 我们更推荐使用 swiper 它能帮你完成更高体验的应用
 - 我们希望你的所有图片都是通过懒加载的方式 来优化项目 如需使用 Vant 懒加载请移步[图片懒加载](https://youzan.github.io/vant/#/zh-CN/lazyload)
 - 为了保留功能 请在初始化项目时谨慎删除不需要的代码
 
 ## 待优化
 
-- 实现页面侧滑返回效果
+- 页面布局使用填充方案
+- swiper 动态导航 二级镶嵌
 
 # 我们使用的 vsCode 插件如下
 

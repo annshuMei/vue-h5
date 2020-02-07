@@ -3,7 +3,7 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
-import 'amfe-flexible';
+import './utils/rem';
 
 import AlloyFinger from 'alloyfinger';
 import AlloyFingerPlugin from 'alloyfinger/vue/alloy_finger_vue';

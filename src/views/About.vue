@@ -7,6 +7,8 @@
       <van-field v-model="value" placeholder="请输入" />
     </van-cell-group>
 
+    <div v-finger:tap="handlerReload">点击刷新当前页面</div>
+
     <van-number-keyboard safe-area-inset-bottom :show="keyboardController" />
   </div>
 </template>
@@ -15,6 +17,10 @@
 import { apiAddress } from '@/request/api';
 
 export default {
+  name: 'About',
+
+  inject: ['reload'],
+
   data() {
     return {
       keyboardController: false,
@@ -38,6 +44,11 @@ export default {
 
     handlerBackHome() {
       this.$router.go(-1);
+    },
+
+    handlerReload() {
+      this.$destroy();
+      this.reload();
     }
   }
 };
