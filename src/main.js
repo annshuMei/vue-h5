@@ -4,6 +4,7 @@ import router from './router';
 import store from './store';
 
 import './utils/rem';
+// import 'amfe-flexible';
 
 import AlloyFinger from 'alloyfinger';
 import AlloyFingerPlugin from 'alloyfinger/vue/alloy_finger_vue';
@@ -11,10 +12,12 @@ import AlloyFingerPlugin from 'alloyfinger/vue/alloy_finger_vue';
 import { PasswordInput, NumberKeyboard } from 'vant';
 import { Button, Field } from 'vant';
 import { Cell, CellGroup } from 'vant';
+import { NavBar, Icon } from 'vant';
 Vue.use(Button);
 Vue.use(Field);
 Vue.use(PasswordInput).use(NumberKeyboard);
 Vue.use(Cell).use(CellGroup);
+Vue.use(NavBar).use(Icon);
 
 Vue.use(AlloyFingerPlugin, {
   AlloyFinger

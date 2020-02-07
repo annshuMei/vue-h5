@@ -65,7 +65,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - 你可以在项目中 css 或 style 中使用 px 应用将自行转换 rem 来做到适配
 - 但是我们并不推荐使用 375px 以上尺寸
 
-- 在 utils/rem/index.js 文件中我们将 amfe-flexible 提供源码复制出来并做修改
+- 我们把主要内容高度 height 作为一个填充值来占据剩下部分 如果你的需求是一屏展示内容这对你来说就太重要了 如需了解详情请移步[rem.docx]()
+- 在 utils/rem/index.js 文件中我们将做了相对应的修改
   > 你将发现如果屏幕大于 540px 时 375px 不再是一屏的宽度，这是我们为了做到 Pad 视觉适配所做调整。不让 html 根 fontSize 大于 54 是为了在大屏时也能正常显示。在开发当中我们推荐使用 100%
   ```
   if (rem >= 54) {

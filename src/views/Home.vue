@@ -2,9 +2,7 @@
   <div class="home">
     <div class="route" v-finger:tap="handlerToAbout">About</div>
 
-    <div class="songlist_row_s" v-finger:swipe="swipeHandler">
-      你可以滑动改变数字
-    </div>
+    <div class="songlist_row_s" v-finger:swipe="swipeHandler">你可以滑动改变数字</div>
     <div>{{ storeNumber }}</div>
 
     <van-cell-group>
@@ -47,7 +45,7 @@ export default {
 
 <style lang="scss" scoped>
 .songlist_row_s {
-  width: 375px;
+  width: 100%;
   height: 350px;
   background-color: red;
 }

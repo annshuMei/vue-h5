@@ -1,10 +1,23 @@
 <template>
   <div id="app">
-    <transition :name="transitionName">
-      <keep-alive :include="keepAlivePages">
-        <router-view v-if="overloaded" class="Router"></router-view>
-      </keep-alive>
-    </transition>
+    <div class="overall">
+      <van-nav-bar
+        title="标题"
+        left-text="返回"
+        right-text="按钮"
+        left-arrow
+        @click-left="onClickLeft"
+        @click-right="onClickRight"
+      />
+    </div>
+    <div class="content-controller">
+      <transition :name="transitionName">
+        <keep-alive :include="keepAlivePages">
+          <router-view v-if="overloaded" class="Router"></router-view>
+        </keep-alive>
+      </transition>
+    </div>
+
     <div class="loading_page" v-show="loading">
       <img class="loading_page_img" src="./assets/Loading/0127de5b0fbf9fa8012043d8b0a74b.gif" />
     </div>
@@ -73,11 +86,39 @@ export default {
 </script>
 
 <style lang="scss">
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  height: 100%;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex: 1 1;
+  position: relative;
+  flex-direction: column;
+}
+.overall {
+  height: 46px;
+}
+.content-controller {
+  height: 100%;
+  position: relative;
+}
+.Router {
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
 }
 
 .route {
@@ -87,11 +128,6 @@ export default {
   padding: 30px;
 }
 
-.Router {
-  position: absolute;
-  width: 100%;
-  transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
-}
 .slide-left-enter,
 .slide-right-leave-active {
   opacity: 0;
